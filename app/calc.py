@@ -1,3 +1,5 @@
+import math
+
 class Calculator:
     def add(self, x, y):
         self.check_types(x, y)
@@ -22,6 +24,14 @@ class Calculator:
         self.check_types(x, y)
         return x ** y
 
+    def sqrt(self, x):
+        self.check_types(x, x)
+        return math.sqrt(x)
+
+    def log10(self, x):
+        self.check_types(x, x)
+        return math.log10(x)
+    
     def check_types(self, x, y):
         if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
             raise TypeError("Parameters must be numbers")
